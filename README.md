@@ -53,13 +53,12 @@ Before you begin, ensure you have met the following requirements:
 
    EMAIL
    EMAIL_PASSWORD
-5. Run the frontend server
+   
+5. Run the frontend server and backend server using following commands respectively
    ```sh
    npm run dev
-   
-6.Run backend server
-   ```sh
    nodemon server
+
 
 The application will be available at `http://localhost:5173`.
 
