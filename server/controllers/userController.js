@@ -22,7 +22,7 @@ const signinUser = async (req, res) => {
 };
 
 const loginUser = async (req, res) => {
-  console.log(req.method); ///////////////////////////////////////////////////////////
+  //console.log(req.method); ///////////////////////////////////////////////////////////
   const { email, password } = req.body;
   try {
     if (!email || !password) {
@@ -31,7 +31,7 @@ const loginUser = async (req, res) => {
     const user = await User.login(email, password);
     const token = createToken(user._id);
 
-    res.status(200).json({ email, token });
+    res.status(200).json({ email , token });
   } catch (error) {
     res.status(400).json({ error: error.message });
   }

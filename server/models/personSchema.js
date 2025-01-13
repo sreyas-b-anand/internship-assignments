@@ -8,7 +8,7 @@ const personSchema = new Schema({
         type : String,
         required : true
     },
-    dob : {
+    dateOfBirth : {
         type : Date,
         required : true
     },

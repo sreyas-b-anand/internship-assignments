@@ -7,7 +7,7 @@ const app = express();
 const cors = require("cors");
 const URI = process.env.DBURI;
 const userRouter = require("./routes/userRoutes");
-const requireAuth = require("./middlewares/jwt");
+//const requireAuth = require("./middlewares/jwt");  if authorization is required
 const OAuthRouter = require("./routes/OAuthRoutes");
 const personRoutes = require("./routes/personRoutes")
 mongoose

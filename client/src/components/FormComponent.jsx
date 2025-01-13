@@ -1,25 +1,25 @@
 /* eslint-disable react/prop-types */
-import  { useState, useEffect } from 'react';
-import { 
-  Dialog, 
-  DialogTitle, 
-  DialogContent, 
-  DialogActions, 
-  TextField, 
-  Button 
-} from '@mui/material';
+import { useState, useEffect } from "react";
+import {
+  Dialog,
+  DialogTitle,
+  DialogContent,
+  DialogActions,
+  TextField,
+  Button,
+} from "@mui/material";
 
 const PersonForm = ({ person, onSubmit, onClose }) => {
   const [formData, setFormData] = useState({
-    name: '',
-    dateOfBirth: '',
+    name: "",
+    dateOfBirth: "",
   });
 
   useEffect(() => {
     if (person) {
       setFormData({
         ...person,
-        dateOfBirth: new Date(person.dateOfBirth).toISOString().split('T')[0],
+        dateOfBirth: new Date(person.dateOfBirth).toISOString().split("T")[0],
       });
     }
   }, [person]);
@@ -28,14 +28,14 @@ const PersonForm = ({ person, onSubmit, onClose }) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = () => {
+    
     onSubmit(formData);
   };
 
   return (
     <Dialog open={true} onClose={onClose}>
-      <DialogTitle>{person ? 'Edit Person' : 'Add Person'}</DialogTitle>
+      <DialogTitle>{person ? "Edit Person" : "Add Person"}</DialogTitle>
       <form onSubmit={handleSubmit}>
         <DialogContent>
           <TextField
@@ -55,9 +55,6 @@ const PersonForm = ({ person, onSubmit, onClose }) => {
             label="Date of Birth"
             type="date"
             fullWidth
-            InputLabelProps={{
-              shrink: true,
-            }}
             value={formData.dateOfBirth}
             onChange={handleChange}
             required
@@ -65,7 +62,7 @@ const PersonForm = ({ person, onSubmit, onClose }) => {
         </DialogContent>
         <DialogActions>
           <Button onClick={onClose}>Cancel</Button>
-          <Button type="submit">{person ? 'Update' : 'Add'}</Button>
+          <Button type="submit">{person ? "Update" : "Add"}</Button>
         </DialogActions>
       </form>
     </Dialog>

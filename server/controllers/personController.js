@@ -26,12 +26,12 @@ const getPerson = async (req, res) => {
 };
 
 const addPerson = async (req, res) => {
-  const { name, dob } = req.body;
-  if(!name || !dob ){
+  const { name, dateOfBirth } = req.body;
+  if(!name || !dateOfBirth ){
     throw new Error("An error occured")
   }
   try {
-    await Person.create({ name, dob });
+    await Person.create({ name, dateOfBirth });
 
     res.status(200).json({ response: "added successfully" });
   } catch (error) {
@@ -56,15 +56,15 @@ const deletePerson = async (req, res) => {
 
 const editPerson = async (req, res) => {
   const { id } = req.params
-  const { name,  dob } = req.body;
-console.log(req.method )
+  const { name,  dateOfBirth } = req.body;
+//console.log(req.method )
   try {
     if (!mongoose.Types.ObjectId.isValid(id)) {
       return res.status(400).json({ error: "No such person" });
     }
     await Person.findOneAndUpdate(
       { _id: id },
-      { name, dob },
+      { name, dateOfBirth },
       { new: true, runValidators: true }
     );
 
