@@ -7,8 +7,6 @@ A React-based dashboard application for managing people records with user authen
 - [Features](#features)
 - [Prerequisites](#prerequisites)
 - [Installation](#installation)
-- [Usage](#usage)
-- [Project Structure](#project-structure)
 - [API Endpoints](#api-endpoints)
 - [Contributing](#contributing)
 - [License](#license)
@@ -33,7 +31,7 @@ Before you begin, ensure you have met the following requirements:
 
 1. Clone the repository:
    ```sh
-   git clone [<repository-url>](https://github.com/sreyas-b-anand/internship-assignments)
+   git clone https://github.com/sreyas-b-anand/internship-assignments
    cd server
    ```
 2. In another terminal window
@@ -58,10 +56,10 @@ Before you begin, ensure you have met the following requirements:
 5. Run the frontend server
    ```sh
    npm run dev
+   
 6.Run backend server
-     ```sh
+   ```sh
    nodemon server
-
 
 The application will be available at `http://localhost:5173`.
 
